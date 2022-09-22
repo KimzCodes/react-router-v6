@@ -5,23 +5,10 @@ import {
   Form,
   useLocation,
 } from "react-router-dom";
-import { getContacts, createContact } from "../contacts";
-
-// apis
-export async function loader() {
-  const contacts = await getContacts();
-  return { contacts };
-}
-
-export async function action() {
-  await createContact();
-}
 
 export default function Root() {
   const { contacts } = useLoaderData();
   let location = useLocation();
-
-  console.log(location);
 
   return (
     <>
